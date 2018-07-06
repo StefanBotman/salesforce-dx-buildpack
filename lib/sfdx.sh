@@ -2,7 +2,8 @@
 
 invokeCmd() {
   debug "CMD: $1"
-  eval $1
+  // Echo the output to be parsed later:
+  echo $(eval $1)
 }
 
 # <DIR> <SFDX_AUTH_URL> <d|s> <alias>

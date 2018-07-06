@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 invokeCmd() {
-  debug "CMD: $1"
-  echo "$1"
-  eval $1
+  debug "CMD: $1"  
+  output=$(eval $1)
+  echo "$output"
 }
 
 # <DIR> <SFDX_AUTH_URL> <d|s> <alias>

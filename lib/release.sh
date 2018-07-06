@@ -133,7 +133,7 @@ if [ ! "$STAGE" == "" ]; then
     then
 
       invokeCmd "sfdx force:source:convert -d mdapiout"
-      deployStatusCode = $(invokeCmd "sfdx force:mdapi:deploy -d mdapiout --wait 1000 -u $TARGET_SCRATCH_ORG_ALIAS -l RunLocalTests --json | jq .status")
+      deployStatusCode=$(invokeCmd "sfdx force:mdapi:deploy -d mdapiout --wait 1000 -u $TARGET_SCRATCH_ORG_ALIAS -l RunLocalTests --json | jq .status")
 	  log "results found: $deployStatusCode"
 	  
 

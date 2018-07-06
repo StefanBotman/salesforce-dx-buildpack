@@ -3,7 +3,7 @@
 invokeCmd() {
   debug "CMD: $1"
   # Echo the output to be parsed later:
-  eval "$1"
+  eval $1
   echo $
 }
 

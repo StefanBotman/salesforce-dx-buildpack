@@ -2,7 +2,7 @@
 
 invokeCmd() {
   debug "CMD: $1"
-  // Echo the output to be parsed later:
+  # Echo the output to be parsed later:
   eval output=\$\("$1"\)
   echo output
 }

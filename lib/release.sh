@@ -61,6 +61,9 @@ debug "show_scratch_org_url: $show_scratch_org_url"
 debug "open-path: $open_path"
 debug "data-plans: $data_plans"
 
+#Define deploy output var:
+deployStatusCode="0"
+
 
 # If review app or CI
 if [ "$STAGE" == "" ]; then
@@ -135,7 +138,10 @@ if [ ! "$STAGE" == "" ]; then
       invokeCmd "sfdx force:source:convert -d mdapiout"
       deployStatusCode=$(invokeCmd "sfdx force:mdapi:deploy -d mdapiout --wait 1000 -u $TARGET_SCRATCH_ORG_ALIAS -l RunLocalTests --json 2>&1 | jq .status")
 	  log "results found: $deployStatusCode"
-	  
+	  if [! "$deployStatusCode" == "0"]
+	  then
+		log "Failed deploy - rollback"
+		heroku rollback
 
     else
 
@@ -157,4 +163,4 @@ if [ -f "$postSetupScript" ]; then
 fi
 
 header "DONE! Completed in $(($SECONDS - $START_TIME))s"
-exit 0
+exit $deployStatusCode

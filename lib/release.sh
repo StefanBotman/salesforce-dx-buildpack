@@ -142,6 +142,7 @@ if [ ! "$STAGE" == "" ]; then
 	  then
 		log "Failed deploy - rollback"
 		heroku rollback
+	  fi
 
     else
 

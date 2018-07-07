@@ -245,7 +245,9 @@ EOF
 fi
 
 ### Procfile & Release Phase
-
+log "Creating Procfile ..."
+  echo "# Deploy source to production org.
+release: ./"$vendorDir"/release.sh \"$TARGET_SCRATCH_ORG_ALIAS\" \"$SFDX_PACKAGE_VERSION_ID\" SOURCE_VERSION" > $BUILD_DIR/Procfile
 # if no Procfile, create one
 if [ ! -f $BUILD_DIR/Procfile ]; then
   log "Creating Procfile ..."

@@ -16,11 +16,12 @@ source "$vendorDir"/common.sh
 source "$vendorDir"/sfdx.sh
 source "$vendorDir"/stdlib.sh
 
+#setup toolbelt:
+curl https://cli-assets.heroku.com/install.sh | sh
+
 : ${SFDX_BUILDPACK_DEBUG:="false"}
 
 header "Running release.sh"
-
-echo "Source version: $SOURCE_VERSION"
 
 # Setup local paths
 log "Setting up paths ..."

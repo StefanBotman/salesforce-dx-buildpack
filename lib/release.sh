@@ -20,6 +20,8 @@ source "$vendorDir"/stdlib.sh
 
 header "Running release.sh"
 
+echo "Source version: $SOURCE_VERSION"
+
 # Setup local paths
 log "Setting up paths ..."
 

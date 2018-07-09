@@ -147,7 +147,7 @@ if [ ! "$STAGE" == "" ]; then
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
 		ls
 		cd SFDX
-		git push "+$SOURCE_VERSION^:featureOne"
+		git push origin "+$SOURCE_VERSION^:featureOne"
 		#git push origin
 	  fi
 

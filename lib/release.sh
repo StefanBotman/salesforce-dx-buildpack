@@ -144,7 +144,7 @@ if [ ! "$STAGE" == "" ]; then
 	  then
 		log "Failed deploy - rollback"
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
-		git clone --single-branch -b featureOne
+		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
 		ls
 		cd featureOne
 		git push "+$SOURCE_VERSION^:featureOne"

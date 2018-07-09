@@ -143,7 +143,8 @@ if [ ! "$STAGE" == "" ]; then
 	  if [ ! "$deployStatusCode" == "0" ]
 	  then
 		log "Failed deploy - rollback"
-		git revert $SOURCE_VERSION
+		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
+		git push "+$SOURCE_VERSION^:featureOne"
 		git push origin
 	  fi
 

@@ -16,10 +16,8 @@ source "$vendorDir"/common.sh
 source "$vendorDir"/sfdx.sh
 source "$vendorDir"/stdlib.sh
 
-#setup toolbelt:
-curl https://cli-assets.heroku.com/install.sh | sh
 
-: ${SFDX_BUILDPACK_DEBUG:="false"}
+: ${SFDX_BUILDPACK_DEBUG:="true"}
 
 header "Running release.sh"
 

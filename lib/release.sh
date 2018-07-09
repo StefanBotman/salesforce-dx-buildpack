@@ -146,7 +146,7 @@ if [ ! "$STAGE" == "" ]; then
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
 		ls
-		cd featureOne
+		cd SFDX
 		git push "+$SOURCE_VERSION^:featureOne"
 		#git push origin
 	  fi

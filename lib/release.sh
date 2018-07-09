@@ -144,8 +144,9 @@ if [ ! "$STAGE" == "" ]; then
 	  then
 		log "Failed deploy - rollback"
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
-		git push "+$SOURCE_VERSION^:featureOne"
-		git push origin
+		find / -name "heroku"
+		#git push "+$SOURCE_VERSION^:featureOne"
+		#git push origin
 	  fi
 
     else

@@ -143,7 +143,8 @@ if [ ! "$STAGE" == "" ]; then
 	  if [ ! "$deployStatusCode" == "0" ]
 	  then
 		log "Failed deploy - rollback"
-		heroku rollback
+		git revert $SOURCE_VERSION
+		git push origin
 	  fi
 
     else

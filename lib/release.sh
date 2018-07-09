@@ -9,6 +9,7 @@ unset GIT_DIR       # Avoid GIT_DIR leak from previous build steps
 
 TARGET_SCRATCH_ORG_ALIAS=${1:-}
 SFDX_PACKAGE_VERSION_ID=${2:-}
+SOURCE_VERSION=${3:-}
 
 vendorDir="vendor/sfdx"
 

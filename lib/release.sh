@@ -145,6 +145,7 @@ if [ ! "$STAGE" == "" ]; then
 		log "Failed deploy - rollback"
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
 		log "installing cucumber:"
+		log /etc/heroku config:get GIT_API
 		ls /etc
 		log "finished installing cucumber"
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX

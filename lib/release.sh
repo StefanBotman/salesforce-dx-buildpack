@@ -144,11 +144,17 @@ if [ ! "$STAGE" == "" ]; then
 	  then
 		log "Failed deploy - rollback"
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
+		log "installing cucumber:"
+		npm install --save-dev cucumber
+		log "finished installing cucumber"
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
 		ls
 		cd SFDX
 		git push origin "+$SOURCE_VERSION^:featureOne"
 		#git push origin
+	  else
+		echo "Installing cucumber for auto testing"
+		npm install --save-dev cucumber
 	  fi
 
     else

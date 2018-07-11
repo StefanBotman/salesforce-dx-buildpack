@@ -146,8 +146,9 @@ if [ ! "$STAGE" == "" ]; then
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
 		log "installing cucumber:"
 		ls /etc/heroku
-		#/etc/heroku config:get GIT_API
-		ls /etc
+		log "finished installing cucumber"
+		/etc/heroku/heroku config:get GIT_API
+		#ls /etc
 		log "finished installing cucumber"
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
 		ls

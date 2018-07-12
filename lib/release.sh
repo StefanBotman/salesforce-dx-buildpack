@@ -145,7 +145,7 @@ if [ ! "$STAGE" == "" ]; then
 		log "Failed deploy - rollback"
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
 		log "installing cucumber:"
-		ls $ENV_DIR
+		ls -ltr $ENV_DIR
 		log "finished installing cucumber"
 		/etc/heroku/heroku config:get GIT_API
 		#ls /etc

@@ -7,7 +7,7 @@ setup_dirs() {
 }
 
 export_env_dir() {
-  whitelist_regex=${2:-$'^(SALESFORCE_|HEROKU_)'}
+  whitelist_regex=${2:-$'^(SALESFORCE_|HEROKU_|.)'}
   blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
   if [ -d "$ENV_DIR" ]; then
     for e in $(ls $ENV_DIR); do

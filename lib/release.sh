@@ -145,8 +145,7 @@ if [ ! "$STAGE" == "" ]; then
 		log "Installing cucumber for auto testing"
 		ls -ltr
 		log "installing selenium"
-		mvnw clean install
-		#npm install --save-dev cucumber
+		
 	  fi
 
     else

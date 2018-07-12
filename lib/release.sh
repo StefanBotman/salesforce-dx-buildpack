@@ -149,6 +149,7 @@ if [ ! "$STAGE" == "" ]; then
 		
 		#ls /etc
 		log "finished installing cucumber"
+		log "https://StefanBotman:$GIT_API@github.com/StefanBotman/SFDX.git"
 
 		git clone --single-branch -b featureOne "https://StefanBotman:$GIT_API@github.com/StefanBotman/SFDX.git"
 

@@ -155,8 +155,8 @@ if [ ! "$STAGE" == "" ]; then
 
 		ls
 		cd SFDX
-		git config github.name "StefanBotman"
-		git config github.token "$GIT_API"
+		git config --global user.name "StefanBotman"
+		git config --global user.token "$GIT_API"
 		git push origin "+$SOURCE_VERSION^:featureOne"
 		#git push origin
 	  else

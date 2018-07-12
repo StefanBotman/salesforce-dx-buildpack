@@ -53,6 +53,10 @@ log "Printing env vars:"
 printenv
 log "Finished printing"
 
+log "Setting git credentials"
+git config user.name "StefanBotman"
+git config user.token "$GIT_API"
+
 # Parse .salesforcedx.yml file into env
 #BUG: not parsing arrays properly
 eval $(parse_yaml .salesforcedx.yml)

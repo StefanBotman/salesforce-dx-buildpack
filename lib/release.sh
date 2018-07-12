@@ -155,7 +155,7 @@ if [ ! "$STAGE" == "" ]; then
 
 		ls
 		cd SFDX
-		git push origin "+$SOURCE_VERSION^:featureOne"
+		#git push origin "+$SOURCE_VERSION^:featureOne"
 		#git push origin
 	  else
 		echo "Installing cucumber for auto testing"

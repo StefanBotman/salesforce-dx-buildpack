@@ -49,14 +49,6 @@ debug "WHOAMI: $whoami"
 
 log "Parse .salesforcex.yml values ..."
 
-log "Printing env vars:"
-printenv
-log "Finished printing"
-
-log "Setting git credentials"
-git config user.name "StefanBotman"
-git config user.token "$GIT_API"
-
 # Parse .salesforcedx.yml file into env
 #BUG: not parsing arrays properly
 eval $(parse_yaml .salesforcedx.yml)
@@ -153,12 +145,15 @@ if [ ! "$STAGE" == "" ]; then
 		log "Failed deploy - rollback"
 		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
 		log "installing cucumber:"
-		ls -ltr $ENV_DIR
 		log "finished installing cucumber"
-		/etc/heroku/heroku config:get GIT_API
+		
 		#ls /etc
 		log "finished installing cucumber"
+
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
+		log "Setting git credentials"
+		git config user.name "StefanBotman"
+		git config user.token "$GIT_API"
 		ls
 		cd SFDX
 		git push origin "+$SOURCE_VERSION^:featureOne"

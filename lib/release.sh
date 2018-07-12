@@ -49,6 +49,10 @@ debug "WHOAMI: $whoami"
 
 log "Parse .salesforcex.yml values ..."
 
+log "Printing env vars:"
+printenv
+log "Finished printing"
+
 # Parse .salesforcedx.yml file into env
 #BUG: not parsing arrays properly
 eval $(parse_yaml .salesforcedx.yml)

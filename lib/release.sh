@@ -140,25 +140,9 @@ if [ ! "$STAGE" == "" ]; then
       invokeCmd "sfdx force:source:convert -d mdapiout"
       deployStatusCode=$(invokeCmd "sfdx force:mdapi:deploy -d mdapiout --wait 1000 -u $TARGET_SCRATCH_ORG_ALIAS -l RunLocalTests --json 2>&1 | jq .status")
 	  log "results found: $deployStatusCode"
-	  if [ ! "$deployStatusCode" == "0" ]
+	  if [ "$deployStatusCode" == "0" ]
 	  then
-		log "Failed deploy - rollback"
-		log "reverting: +$SOURCE_VERSION^:featureOne / $STAGE"
-		log "installing cucumber:"
-		log "finished installing cucumber"
-		
-		#ls /etc
-		log "finished installing cucumber"
-		log "https://StefanBotman:$GIT_API@github.com/StefanBotman/SFDX.git"
-
-		git clone --single-branch -b featureOne "https://StefanBotman:$GIT_API@github.com/StefanBotman/SFDX.git"
-
-		ls
-		cd SFDX
-		#git push origin "+$SOURCE_VERSION^:featureOne"
-		#git push origin
-	  else
-		echo "Installing cucumber for auto testing"
+		log "Installing cucumber for auto testing"
 		npm install --save-dev cucumber
 	  fi
 

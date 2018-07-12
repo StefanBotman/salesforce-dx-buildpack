@@ -152,10 +152,11 @@ if [ ! "$STAGE" == "" ]; then
 
 		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
 		log "Setting git credentials"
-		git config user.name "StefanBotman"
-		git config user.token "$GIT_API"
+
 		ls
 		cd SFDX
+		git config user.name "StefanBotman"
+		git config user.token "$GIT_API"
 		git push origin "+$SOURCE_VERSION^:featureOne"
 		#git push origin
 	  else

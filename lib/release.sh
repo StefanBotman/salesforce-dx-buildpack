@@ -150,13 +150,11 @@ if [ ! "$STAGE" == "" ]; then
 		#ls /etc
 		log "finished installing cucumber"
 
-		git clone --single-branch -b featureOne https://github.com/StefanBotman/SFDX
+		git clone --single-branch -b featureOne https://StefanBotman:$GIT_API@github.com/StefanBotman/SFDX
 		log "Setting git credentials"
 
 		ls
 		cd SFDX
-		git config --global user.name "StefanBotman"
-		git config --global user.token "$GIT_API"
 		git push origin "+$SOURCE_VERSION^:featureOne"
 		#git push origin
 	  else

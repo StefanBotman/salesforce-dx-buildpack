@@ -27,10 +27,6 @@ header 'Welcome to salesforce-dx-buildpack!'
 log "Exporting environment directories ..."
 export_env "$ENV_DIR"
 
-log "Heroku login:"
-heroku login
-log "heroku login finished"
-
 # Setup local paths
 log "Setting up paths ..."
 
